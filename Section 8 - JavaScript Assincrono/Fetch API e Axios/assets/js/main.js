@@ -7,8 +7,6 @@
 axios('pessoas.json')
   .then(res => carregaElementosNaPagina(res.data))
   
-
-
 function carregaElementosNaPagina(json){
   const table = document.createElement('table') //cria uma tag de tabela no html
 
