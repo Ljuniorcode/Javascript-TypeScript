@@ -1,0 +1,21 @@
+//npm - gerenciador de pacotes
+//npm init -y -> inicia um novo projeto
+
+//usar o express como exemplo
+
+//npm install express -> instala o framework web p/ node.js
+
+//npm install express --save-dev -> move o express para a área de desenvolvimento
+//npm install express --save-prod -> move o express para  área de produção do projeto
+
+//npm install express@2.1.0 -> instala o express em uma versão específica
+//npm install express@4.x -> instala o expres na última versão
+
+//npm uninstall express -> desinstala o express
+//npm ls --depth=0 -> lista pacotes com profundidade zero (0) sem os lixos
+//npm outdated -> verifica pacotes desatualizados
+
+//obs: dentro do package.json
+// o circunflexo (^) indica que o pacote pode ser atualizado
+// com o comando npm update e o (^) atualiza para a última
+// versão major
