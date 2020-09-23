@@ -1,32 +1,26 @@
-//importando arquivo/módulos
-// const mod1 = require("./mod1");
-// console.log(mod1.falanome());
+//importando multiplicacao do mod1
+// const multiplicacao = require("./mod1");
+// console.log(multiplicacao(2, 2));
 
-//importar apenas a chave nome
-// const mod2 = require("./mod1").nome;
-// console.log(mod2);
+//importando classe cachorro
+const classCachorro = require("./mod1");
 
-//usando desestruturação
-// const { nome, sobrenome, falanome } = require("./mod1");
-// console.log(nome());
-// console.log(sobrenome());
-// console.log(falanome());
+//usando o módulo latir da classe cachorro
+const dogg = new classCachorro("trovao");
+dogg.latir();
 
-//importando a classe Pessoa usando desestruturação
-// const { Pessoa } = require("./mod1");
-// const p1 = new Pessoa("Luciano");
-// console.log(p1);
+//praticando buscas, caminho absoluto
+//nome da pasta atual onde estamos
+//console.log(__dirname)
 
-//usando com o módulo path, inicialize um projeto: npm init -y
-//instalar e usar o axios
+//nome do arquivo atual
+//console.log(__filename)
+
+//módulo padrão do node - path
+//o path se vira e cria o caminho correto
 const path = require("path");
-const axios = require("axios");
-const { Pessoa } = require("./mod1");
+//console.log(path.resolve(__dirname)); // -> exibe o diretório atual de onde estamos
+console.log(path.resolve(__dirname, "..", "..")); // -> neste caminho irá voltar duas pastas
 
-const p1 = new Pessoa("João");
-console.log(p1);
-// axios("https://www.otaviomiranda.com.br/files/json/pessoas.json")
-//   .then((res) => console.log(res.data))
-//   .catch((e) => console.log(e));
-
-console.log(Pessoa);
+//voltando duas pastas e entrando no diretório arquivos e em seguida imagens
+console.log(path.resolve(__dirname, "..", "..", arquivos, imagens));
