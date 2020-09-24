@@ -1,15 +1,10 @@
-//importando módulo do express
 const express = require("express");
-
-//cria uma variável para executar o express
 const app = express();
 
-//CRUD (CRIAR,   LER, ATUALIZAR, APAGAR)
-//CRUD (CREATE, READ, UPDATE, DELETE)
-//CRUD (POST,    GET,    PUT, DELETE)
+//aquilo que vier do formulário web será tratado
+//post
+app.use(express.urlencoded({ extended: true }));
 
-//rotas
-//requisição
 app.get("/", (req, res) => {
   res.send(`
     <form action="/" method="POST">
@@ -19,13 +14,29 @@ app.get("/", (req, res) => {
   `);
 });
 
-//respondendo o método de requisição acima
-app.post("/", (req, res) => {
-  res.send("Recebi o formulário!");
+// req.params/route params - partes que vem na rota da url
+// ex: profiles/3 ou /users/1
+
+// req.query - parâmetros enviados com ?
+// ex: profiles/?chave1=valor1&chave2=valor2
+
+// req.body - dados que vem do corpo da requisição, rotas post e put
+// ex: formulário de cadastro, contato, login
+// ex: {'nome':'Luciano', 'email':'lucianome@dominio.com'}
+
+app.get("/testes/:id?/:param?", (req, res) => {
+  console.log(req.params);
+  console.log(req.params.id); //buscando id
+
+  console.log(req.query);
+
+  res.send(req.params);
 });
 
-app.get("/contato", (req, res) => {
-  res.send("Obrigado por entrar em contato");
+//respondendo o método de requisição acima
+app.post("/", (req, res) => {
+  console.log(req.body);
+  res.send(`O que você enviou foi: ${req.body.nome}`);
 });
 
 app.listen(3000, () => {
