@@ -1,0 +1,2 @@
+testando pasta public 
+arquivo teste.txt
