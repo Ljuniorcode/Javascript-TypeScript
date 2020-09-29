@@ -5,8 +5,28 @@ const app = express();
 const routes = require("./routes");
 const path = require("path");
 
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
+const {
+  middlewareGlobal,
+  checkCsrfError,
+  csrfMiddleware,
+} = require("./src/middlewares/middlewares");
+
+//configurando a sessão
+const sessionOptions = session({
+  secret: "asdf a6s4fa6s1f3as2d1f",
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true,
+  },
+});
+
 const mongoose = require("mongoose");
-const connectString = "";
 mongoose
   .connect(process.env.CONNECTIONSTRING, {
     useNewUrlParser: true,
@@ -17,6 +37,14 @@ mongoose
     app.emit("Pronto");
   })
   .catch((e) => console.log(e));
+
+app.use(sessionOptions);
+app.use(flash());
+
+app.use(csrf());
+app.use(middlewareGlobal);
+app.use(csrfMiddleware);
+app.use(checkCsrfError);
 
 //permite o aninhamento de objetos - o JSON que manda
 //melhora o conteúdo das requisiçoes \0/
