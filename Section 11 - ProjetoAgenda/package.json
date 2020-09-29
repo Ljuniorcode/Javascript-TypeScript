@@ -1,5 +1,5 @@
 {
-  "name": "Projeto Agenda",
+  "name": "projetoagenda",
   "version": "1.0.0",
   "description": "Aprendendo CRUD",
   "main": "server.js",
@@ -27,11 +27,11 @@
     "style-loader": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4",
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   }
