@@ -1,4 +1,5 @@
-<%- include('includes/head') %> <%- include('includes/nav') %>
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
 <!---->
 <div class="container">
   <div class="row">
@@ -8,13 +9,21 @@
       <h1 class="text-center">Agenda</h1>
       <p class="text-center lead">Contatos dos colaboradores do setor XYZ</p>
 
+      <%- include('includes/messages') %>
+
+
       <div class="responsive-table">
         <table class="table my-3">
+          <th>
+          <td>Nome</td>
+          <td>Ramal</td>
+          <td>Email</td>
+          </th>
           <tr>
+            <td></td>
             <td>Luciano</td>
-            <td>Junior</td>
-            <td>84 98764-3256</td>
-            <td>lucjunior@gmail.com</td>
+            <td>6165</td>
+            <td>luc@dom.com</td>
           </tr>
         </table>
       </div>
