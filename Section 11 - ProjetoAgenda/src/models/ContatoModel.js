@@ -16,6 +16,12 @@ function Contato(body) {
   this.contato = null;
 }
 
+Contato.buscaPorId = async function (id) {
+  if (typeof id !== 'string') return;
+  const user = await ContatoModel.findById(id)
+  return user
+}
+
 Contato.prototype.register = async function () {
   this.valida()
 
@@ -34,7 +40,6 @@ Contato.prototype.valida = () => {
     this.errors.push('Pelo menos um contato precisa ser envaido: email ou telefone')
 
   }
-
 }
 
 Contato.prototype.cleanUp = function () {

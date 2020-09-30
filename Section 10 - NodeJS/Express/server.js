@@ -49,6 +49,7 @@ app.use(checkCsrfError);
 //permite o aninhamento de objetos - o JSON que manda
 //melhora o conteúdo das requisiçoes \0/
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //conteúdo estáticos na pasta public
 app.use(express.static(path.resolve(__dirname, "public")));
