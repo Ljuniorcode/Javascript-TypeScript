@@ -3,6 +3,7 @@ const validator = require('validator');
 
 const ContatoSchema = new mongoose.Schema({
   nome: { type: String, required: true },
+  sobrenome: { type: String, required: false, default: '' },
   email: { type: String, required: false, default: '' },
   telefone: { type: String, required: false, default: '' },
   criadoEm: { type: Date, default: Date.now },
@@ -30,7 +31,7 @@ Contato.prototype.register = async function () {
   this.contato = await ContatoModel.create(this.body)
 }
 
-Contato.prototype.valida = () => {
+Contato.prototype.valida = function () {
   //validação
   //email tem q ser válido, senha entre 3 e 50 caracteres
   this.cleanUp()
@@ -51,9 +52,9 @@ Contato.prototype.cleanUp = function () {
 
   this.body = {
     nome: this.body.nome,
+    sobrenome: this.body.sobrenome,
     email: this.body.email,
     telefone: this.body.telefone,
-
   }
 }
 
