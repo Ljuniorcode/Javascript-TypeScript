@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { FaPlus } from 'react-icons/fa'
 import { FaEdit, FaWindowClose } from 'react-icons/fa'
 
-
 import './Main.css'
 
 export default class Main extends Component {
@@ -33,8 +32,6 @@ export default class Main extends Component {
       novaTarefa: e.target.value,
     })
   }
-
-
 
   render() {
     const { novaTarefa, tarefas } = this.state;
