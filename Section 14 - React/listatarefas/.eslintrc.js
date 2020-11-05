@@ -26,6 +26,7 @@ module.exports = {
     // eslint-disable-next-line comma-dangle
     "react/jsx-filename-estension": 0,
     // eslint-disable-next-line comma-dangle
-    "react/state-in-constructor": 0
+    "react/state-in-constructor": 0,
+    "react/forbid-prop-types": 0
   },
 };
