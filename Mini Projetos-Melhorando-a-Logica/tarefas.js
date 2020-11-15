@@ -16,7 +16,7 @@ function mostraTarefas() {
     const pos = tarefas.indexOf(tarefa)
 
     const linkText = document.createTextNode(' Delete')//CRIA UM ELEMENTO DE TEXTO X
-    elementoLink.appendChild(linkText) //aqui é uma função delete que tem como filho o elemento X
+    elementoLink.appendChild(linkText) //aqui é uma função delete que tem como filho o elementlso X
 
     //adicionando um atributo de click no elemento <a> que chama uma função de delete
     elementoLink.setAttribute('onclick', `deletaTarefa(${pos})`)
