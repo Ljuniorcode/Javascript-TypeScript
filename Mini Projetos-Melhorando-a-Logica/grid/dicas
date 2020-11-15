@@ -1,0 +1,21 @@
+Link  para consulta
+https://www.origamid.com/projetos/css-grid-layout-guia-completo/
+
+
+### CONTAINER
+- display: grid;
+- grid-template-columns;
+- grid-template-rows;
+- grid-gap
+  -grid-row-gap 
+  -grid-column-gap
+-grid-template-areas
+
+### ITEM
+-grid-column 
+  -grid-column-start
+  -grid-column-end
+-grid-row 
+  -grid-row-start
+  -grid-row-end
+-grid-area

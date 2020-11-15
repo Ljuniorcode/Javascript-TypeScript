@@ -16,4 +16,7 @@ const novoObjeto = Object.assign({
   bateria: 5000,
   preco: 1200
 }, celular)
-console.log(novoObjeto)
+// console.log(novoObjeto)
+
+const objeto2 = { ...celular }
+console.log('objeto2: ', objeto2)
